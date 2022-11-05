@@ -24,8 +24,10 @@ printf "\e[36mInstalling Homebrew\e[m\n"
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+/opt/homebrew/bin/brew tap homebrew/cask-fonts
 /opt/homebrew/bin/brew update
 /opt/homebrew/bin/brew install --cask appcleaner the-unarchiver visual-studio-code iterm2 google-chrome microsoft-edge steam-plus-plus steam mactex-no-gui
+/opt/homebrew/bin/brew install --cask font-cascadia-code font-cascadia-code-pl
 
 ### SMB Sharing on macOS
 sudo defaults write /Library/Preferences/com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
