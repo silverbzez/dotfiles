@@ -1,0 +1,36 @@
+[user]
+  name = Even Zhou
+  email = silverbz.dev@outlook.com
+[core]
+  editor = vim
+  autocrlf = input
+  safecrlf = warn
+  eol = lf
+[pull]
+  ff = only
+[init]
+  defaultBranch = main
+[credential]
+  helper = store --file ~/.gitcredential
+[alias]
+  v = version
+  a = add .
+  c = commit
+  cm = commit -m
+  s = status
+  b = branch -a
+  ph = push
+  pl = pull
+  cl = clone
+  cb = clone -b
+  f = fetch -pPv --all
+  ch = checkout
+  cht = checkout -t
+  chb = checkout -b
+  lo = log --pretty=oneline
+  lr = log --pretty=reference
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
