@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 /opt/homebrew/bin/brew update
 /opt/homebrew/bin/brew upgrade
+/opt/homebrew/bin/brew autoremove
 /opt/homebrew/bin/brew cleanup -s

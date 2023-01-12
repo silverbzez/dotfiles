@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+import argparse
+import subprocess
+cmd = ""
+images = []
+
+
+def initArgsList(parser: argparse.ArgumentParser):
+
+    parser.add_argument("--no-clear", help="don't clear outdated images", action="store_true")
+
+
+def loadImages():
+
+    global images
+    proc = subprocess.Popen([cmd, "image", "list"], stdout=subprocess.PIPE)
+    lines = proc.stdout.readlines()[1:]
+    for line in lines:
+        line = line.decode("utf-8").rstrip().split()
+        if line[1] != "<none>":
+            images.append("{}:{}".format(line[0], line[1]))
+
+
+def upgradeImages():
+
+    global images
+    for image in images:
+        proc = subprocess.Popen([cmd, "image", "pull", image])
+        proc.wait()
+        print()
+
+
+def clearImages():
+
+    subprocess.Popen([cmd, "image", "prune", "--force"])
+
+
+def checkOCI():
+
+    global cmd
+
+    try:
+        subprocess.Popen(["docker", "--version"], stdout=subprocess.DEVNULL)
+        cmd = "docker"
+    except FileNotFoundError:
+        pass
+
+    try:
+        subprocess.Popen(["podman", "--version"], stdout=subprocess.DEVNULL)
+        cmd = "podman"
+    except FileNotFoundError:
+        pass
+
+
+if __name__ == "__main__":
+
+    checkOCI()
+    if cmd == "":
+        print("Docker\\Podman not found! Stop Here.")
+        exit(-1)
+
+    parser = argparse.ArgumentParser()
+    initArgsList(parser)
+
+    args = parser.parse_args()
+
+    loadImages()
+    upgradeImages()
+    if not args.no_clear:
+        clearImages()

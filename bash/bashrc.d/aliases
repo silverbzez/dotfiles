@@ -5,15 +5,19 @@ alias bashconfig="vim $HOME/.bashrc"
 alias bashapply=". $HOME/.bashrc"
 
 # ls
-alias ls="ls --color=auto -p "
-alias ll="ls -Alh "
+alias ls="ls --color=auto -p"
+alias ll="ls -Alh"
 
 # grep
-alias grep="grep --color=auto "
+alias grep="grep --color=auto"
 
 # Directories
 alias dl="cd $HOME/Downloads/"
 alias doc="cd $HOME/Documents/"
+
+# Docker
+alias docker="podman"
+alias docker-compose="podman-compose"
 
 if [ -o $color_prompt ]; then
   printf "\xE2\x9C\x93 aliases\n"

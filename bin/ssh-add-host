@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import os
-import sys
 import argparse
 
 
@@ -18,7 +17,7 @@ def writeSSHConfig(args: argparse.Namespace):
     file = open(os.environ["HOME"] + "/.ssh/config", "a")
     file.writelines([
         "\n",
-        "Host {}\n".format(args.name if args.name else args.host),
+        "Host {}\n".format(args.name),
         "  HostName {}\n".format(args.host),
         "  User {}\n".format(args.user),
         "  Port {}\n".format(args.port),

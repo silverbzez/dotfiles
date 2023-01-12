@@ -6,8 +6,8 @@
   autocrlf = input
   safecrlf = warn
   eol = lf
-[pull]
-  ff = only
+[fetch]
+  prune = true
 [init]
   defaultBranch = main
 [credential]
@@ -20,13 +20,17 @@
   s = status
   b = branch -a
   ph = push
-  pl = pull
+  plff = pull --ff-only
+  plrb = pull --rebase
   cl = clone
   cb = clone -b
   f = fetch -pPv --all
   ch = checkout
   cht = checkout -t
   chb = checkout -b
+  sh = stash
+  shl = stash list
+  shd = stash drop
   lo = log --pretty=oneline
   lr = log --pretty=reference
 [filter "lfs"]
