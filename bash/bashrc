@@ -27,7 +27,7 @@ esac
 if [ -o $color_prompt ]; then
   PS1="\n{\t} [\u@\h]: \w\n\$ "
 elif [ "$USER" == "root" ]; then
-  PS1="\n{\t} [\e[91m\u\e[m@\h]: \e[91m$PWD\e[m\n\$ "
+  PS1="\n{\t} [\e[91m\u\e[m@\h]: \e[91m\$PWD\e[m\n\$ "
 else
   PS1="\n{\t} [\u@\h]: \e[36m\w\e[m\n\$ "
 fi
