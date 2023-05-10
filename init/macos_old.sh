@@ -9,7 +9,7 @@ printf "Please manually download MacPorts in the following link:\n"
 /usr/bin/read -p "Press enter to continue"
 
 sudo /opt/local/bin/port selfupdate
-sudo /opt/local/bin/port -N install pkgconfig bash bash-completion vim git wget curl tree htop openssh podman
+sudo /opt/local/bin/port -N install pkgconfig bash bash-completion vim git wget curl tree htop openssh podman podman-compose
 sudo /opt/local/bin/port -N install python39 py39-pip py39-setuptools py39-autopep8 py39-codestyle
 sudo /opt/local/bin/port -N install python310 py310-pip py310-setuptools py310-autopep8 py310-codestyle
 sudo /opt/local/bin/port -N install python311 py311-pip py311-setuptools py311-autopep8 py311-codestyle
