@@ -1,12 +1,15 @@
 ### Bash Completion
 
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+if [ -r /opt/local/etc/profile.d/bash_completion.sh ]; then
   . /opt/local/etc/profile.d/bash_completion.sh
   enabled=1
-elif [ -f /usr/share/bash-completion/bash_completion ]; then
+elif [ -r /opt/homebrew/etc/profile.d/bash_completion.sh ]; then
+  . /opt/homebrew/etc/profile.d/bash_completion.sh
+  enabled=1
+elif [ -r /usr/share/bash-completion/bash_completion ]; then
   . /usr/share/bash-completion/bash_completion
   enabled=1
-elif [ -f /etc/bash_completion ]; then
+elif [ -r /etc/bash_completion ]; then
   . /etc/bash_completion
   enabled=1
 fi
