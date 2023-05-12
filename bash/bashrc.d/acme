@@ -6,4 +6,5 @@ if [ -r $HOME/.acme.sh/acme.sh.env ]; then
     printf "\xE2\x9C\x93 acme.sh\n"
   else
     printf "\e[32m\xE2\x9C\x93 acme.sh\e[m\n"
+  fi
 fi
