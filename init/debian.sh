@@ -27,22 +27,23 @@ systemctl reload-or-restart systemd-resolved.service
 
 ### Get Debian Version Codename
 . /etc/os-release
-read -p "Check Debian version: $(echo "$VERSION_CODENAME")?"
+read -p "Check Debian version: $VERSION_CODENAME?"
 
 ### Custom Repos
 rm -rvf /etc/apt/sources.list
 touch /etc/apt/sources.list
 rm -rvf /etc/apt/sources.list.d/*
 cat << EOF >> /etc/apt/sources.list.d/debian.list
-deb http://mirrors.tuna.tsinghua.edu.cn/debian/ $(echo "$VERSION_CODENAME") main contrib non-free
-deb http://mirrors.tuna.tsinghua.edu.cn/debian/ $(echo "$VERSION_CODENAME")-updates main contrib non-free
-deb http://mirrors.tuna.tsinghua.edu.cn/debian/ $(echo "$VERSION_CODENAME")-backports main contrib non-free
-deb http://mirrors.tuna.tsinghua.edu.cn/debian-security $(echo "$VERSION_CODENAME")-security main contrib non-free
+deb http://mirrors.ustc.edu.cn/debian/ $VERSION_CODENAME main contrib non-free
+deb http://mirrors.ustc.edu.cn/debian/ $VERSION_CODENAME-updates main contrib non-free
+deb http://mirrors.ustc.edu.cn/debian/ $VERSION_CODENAME-backports main contrib non-free
+deb http://mirrors.ustc.edu.cn/debian-security $VERSION_CODENAME-security main contrib non-free
 EOF
 apt update
-apt install -y vim gawk wget curl gnupg
-apt purge -y nano vim-tiny mawk
+apt install -y vim gawk wget curl command-not-found gnupg net-tools
+apt purge -y nano vim-tiny mawk laptop-detect dictionaries-common ispell
 apt dist-upgrade -y
+apt autoremove --purge -y
 ### Reconfigure Repos to Use HTTPS
 sed -i "s/http/https/g" /etc/apt/sources.list.d/debian.list
 
@@ -50,7 +51,7 @@ sed -i "s/http/https/g" /etc/apt/sources.list.d/debian.list
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 cat << EOF >> /etc/apt/sources.list.d/docker.list
-deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(echo "$VERSION_CODENAME") stable
+deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://mirrors.ustc.edu.cn/docker-ce/linux/debian $VERSION_CODENAME stable
 EOF
 apt update
 apt install -y docker-ce
