@@ -35,3 +35,5 @@ if [ -o $DISABLE_PROXY ]; then
 else
   disable_proxy
 fi
+
+unset DISABLE_PROXY
