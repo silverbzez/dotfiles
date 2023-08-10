@@ -1,40 +1,43 @@
 [user]
-  name = Even Zhou
-  email = silverbz.dev@outlook.com
+	name = Even Zhou
+	email = silverbz.dev@outlook.com
 [core]
-  editor = vim
-  autocrlf = input
-  safecrlf = warn
-  eol = lf
-[fetch]
-  prune = true
-[init]
-  defaultBranch = main
+	editor = vim
+	autocrlf = input
+	safecrlf = warn
+	eol = lf
 [credential]
-  helper = store --file ~/.gitcredential
+	helper = store --file ~/.gitcredential
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+	pruneTags = true
+[pull]
+	ff = only
 [alias]
-  v = version
-  a = add .
-  c = commit
-  cm = commit -m
-  s = status
-  b = branch -a
-  ph = push
-  plff = pull --ff-only
-  plrb = pull --rebase
-  cl = clone
-  cb = clone -b
-  f = fetch -pPv --all
-  ch = checkout
-  cht = checkout -t
-  chb = checkout -b
-  sh = stash
-  shl = stash list
-  shd = stash drop
-  lo = log --pretty=oneline
-  lr = log --pretty=reference
+	v = version
+	a = add .
+	c = commit
+	cm = commit -m
+	s = status
+	b = branch -a
+	ph = push
+	pl = pull
+	plrb = pull --rebase --autostash
+	cl = clone
+	cb = clone -b
+	f = fetch -pPv --all
+	ch = checkout
+	cht = checkout -t
+	chb = checkout -b
+	sh = stash
+	shl = stash list
+	shd = stash drop
+	lo = log --pretty=oneline
+	lr = log --pretty=reference
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

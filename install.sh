@@ -2,10 +2,10 @@
 
 # Bash
 printf "\e[36mInstalling Bash configs\e[m\n"
-install -v -m 644 $PWD/bash/bash_profile $HOME/.bash_profile
-install -v -m 644 $PWD/bash/bashrc $HOME/.bashrc
+install -v -m 644 $PWD/shell/bash/bash_profile $HOME/.bash_profile
+install -v -m 644 $PWD/shell/bash/bashrc $HOME/.bashrc
 mkdir -v -m 700 $HOME/.bashrc.d
-for cfile in $PWD/bash/bashrc.d/*; do
+for cfile in $PWD/shell/bash/bashrc.d/*; do
   install -v -m 644 $cfile $HOME/.bashrc.d
 done
 

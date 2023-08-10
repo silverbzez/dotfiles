@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+### Bash Completion
+if [ $ENVDIR != "/" ]; then
+    if [ -r $ENVDIR/etc/profile.d/bash_completion.sh ]; then
+        . $ENVDIR/etc/profile.d/bash_completion.sh
+        enabled=1
+    fi
+else
+    if [ -r /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+        enabled=1
+    elif [ -r /etc/bash_completion ]; then
+        . /etc/bash_completion
+        enabled=1
+    fi
+fi
+
+if [ -o $enabled ]; then
+    if [ -o $color_prompt ]; then
+        printf "\xE2\x9C\x98 bash-completion not installed\n"
+    else
+        printf "\e[31m\xE2\x9C\x98 bash-completion not installed\e[m\n"
+    fi
+else
+    if [ -o $color_prompt ]; then
+        printf "\xE2\x9C\x93 bash-completion\n"
+    else
+        printf "\e[32m\xE2\x9C\x93 bash-completion\e[m\n"
+    fi
+fi
+
+unset enabled

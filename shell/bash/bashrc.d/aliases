@@ -1,5 +1,5 @@
+#!/usr/bin/env bash
 ### Aliases
-
 # Bashrc
 alias bashconfig="vim $HOME/.bashrc"
 alias bashapply=". $HOME/.bashrc"
@@ -20,7 +20,7 @@ alias docker="podman"
 alias docker-compose="podman-compose"
 
 if [ -o $color_prompt ]; then
-  printf "\xE2\x9C\x93 aliases\n"
+    printf "\xE2\x9C\x93 aliases\n"
 else
-  printf "\e[32m\xE2\x9C\x93 aliases\e[m\n"
+    printf "\e[32m\xE2\x9C\x93 aliases\e[m\n"
 fi
