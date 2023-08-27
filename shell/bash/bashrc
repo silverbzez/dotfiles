@@ -40,18 +40,18 @@ export PS1 PS2 PS3 PS4
 ENVDIR=$(dirname $(dirname $BASH))
 
 ### Set environments
-PATH="$HOME/.bin:$PATH"
 if [ $ENVDIR != "/" ]; then
     PATH="$ENVDIR/bin:$ENVDIR/sbin:$PATH"
-    export EDITOR=$ENVDIR/bin/vim
 fi
+PATH="$HOME/.bin:$PATH"
 export PATH
+export EDITOR=/usr/bin/vim
 export HOMEBREW_INSTALL_FROM_API=1
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-#export DOTNET_CLI_TELEMETRY_OPTOUT=true
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 DISABLE_PROXY=1
 
 ### Read additional configs

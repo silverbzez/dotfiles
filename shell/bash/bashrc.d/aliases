@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 ### Aliases
 # Bashrc
-alias bashconfig="vim $HOME/.bashrc"
+alias bashconfig="$EDITOR $HOME/.bashrc"
 alias bashapply=". $HOME/.bashrc"
 
 # ls
