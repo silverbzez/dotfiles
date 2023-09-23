@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 ### ASDF
-if [ -r /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
-    . /opt/homebrew/opt/asdf/libexec/asdf.sh
+if [ -r $ENVDIR/opt/asdf/libexec/asdf.sh ]; then
+    . $ENVDIR/opt/asdf/libexec/asdf.sh
     enabled=1
 fi
 
