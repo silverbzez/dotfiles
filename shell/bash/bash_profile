@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-### Load Bashrc
+### Load bashrc
 if [ -r $HOME/.bashrc ]; then
     . $HOME/.bashrc
 fi

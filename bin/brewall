@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+### Homebrew full upgrade & clean
 /opt/homebrew/bin/brew update
 /opt/homebrew/bin/brew upgrade --greedy
 /opt/homebrew/bin/brew autoremove

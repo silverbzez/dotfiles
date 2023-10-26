@@ -15,10 +15,6 @@ alias grep="grep --color=auto"
 alias dl="cd $HOME/Downloads/"
 alias doc="cd $HOME/Documents/"
 
-# Docker
-alias docker="podman"
-alias docker-compose="podman-compose"
-
 if [ -o $color_prompt ]; then
     printf "\xE2\x9C\x93 aliases\n"
 else
