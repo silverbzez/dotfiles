@@ -43,7 +43,7 @@ ENVDIR=$(dirname $(dirname $BASH))
 if [ $ENVDIR != "/" ]; then
     PATH="$ENVDIR/bin:$ENVDIR/sbin:$PATH"
 fi
-PATH="$HOME/.bin:$PATH"
+PATH="$HOME/.bin:$HOME/.volta/bin:$PATH"
 export PATH
 export EDITOR=/usr/bin/vim
 export HOMEBREW_NO_INSTALL_FROM_API=1
