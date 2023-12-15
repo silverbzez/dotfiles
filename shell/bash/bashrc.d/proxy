@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
 ### Proxy
 enable_proxy() {
-    os_type=$(uname -s)
-    if [ $os_type == "Linux" ]; then
-        http_proxy=http://127.0.0.1:1080
-        https_proxy=http://127.0.0.1:1080
-    else
-        http_proxy=http://127.0.0.1:1087
-        https_proxy=http://127.0.0.1:1087
-    fi
-    unset os_type
-    export http_proxy https_proxy
+    export http_proxy=http://127.0.0.1:1087
+    export HTTP_PROXY=http://127.0.0.1:1087
+    export https_proxy=http://127.0.0.1:1087
+    export HTTPS_PROXY=http://127.0.0.1:1087
 
     if [ -o $color_prompt ]; then
         printf "\xE2\x9C\x93 proxy\n"
@@ -21,7 +15,9 @@ enable_proxy() {
 
 disable_proxy() {
     unset http_proxy
+    unset HTTP_PROXY
     unset https_proxy
+    unset HTTPS_PROXY
 
     if [ -o $color_prompt ]; then
         printf "\xE2\x9C\x98 proxy\n"

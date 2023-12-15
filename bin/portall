@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 ### MacPorts full upgrade & clean
-sudo /opt/local/bin/port selfupdate
-sudo /opt/local/bin/port upgrade outdated
-sudo /opt/local/bin/port reclaim
+sudo git -C '/opt/macports/macports-base' fetch -pP --all
+sudo /opt/macports/bin/port sync
+sudo /opt/macports/bin/port upgrade outdated
+sudo /opt/macports/bin/port reclaim
