@@ -1,0 +1,70 @@
+{
+    "additional-repositories": [],
+    "archinstall-language": "English",
+    "audio_config": {
+        "audio": "pipewire"
+    },
+    "bootloader": "Systemd-boot",
+    "config_version": "2.7.1",
+    "debug": false,
+    "disk_config": {
+        "config_type": "manual_partitioning",
+        "device_modifications": [
+            {
+                "partitions": [
+                ],
+                "wipe": true
+            }
+        ]
+    },
+    "disk_encryption": null,
+    "kernels": [
+        "linux"
+    ],
+    "locale_config": {
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US"
+    },
+    "mirror_config": {
+        "custom_mirrors": [],
+        "mirror_regions": {
+        }
+    },
+    "network_config": {
+        "nics": [
+        ],
+        "type": "manual"
+    },
+    "no_pkg_lookups": false,
+    "ntp": false,
+    "offline": false,
+    "packages": [
+        "bash-completion",
+        "nano",
+        "vim"
+    ],
+    "parallel downloads": 0,
+    "profile_config": {
+        "gfx_driver": null,
+        "greeter": null,
+        "profile": {
+            "custom_settings": {
+                "Cockpit": {},
+                "sshd": {}
+            },
+            "details": [
+                "Cockpit",
+                "sshd"
+            ],
+            "main": "Server"
+        }
+    },
+    "script": "guided",
+    "silent": false,
+    "skip_ntp": false,
+    "skip_version_check": false,
+    "swap": false,
+    "uki": true,
+    "version": "2.7.1"
+}
