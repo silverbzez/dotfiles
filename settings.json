@@ -1,0 +1,70 @@
+{
+    "security.workspace.trust.enabled": false,
+
+    "telemetry.telemetryLevel": "off",
+
+    "window.commandCenter": false,
+
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.statusBar.visible": true,
+    "workbench.editorAssociations": {
+        "*.pdf": "latex-workshop-pdf-hook"
+    },
+
+    "explorer.fileNesting.enabled": true,
+    "explorer.sortOrder": "type",
+
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 2000,
+    "files.associations": {
+        "Portfile": "tcl",
+        "*.env": "properties"
+    },
+
+    "editor.fontFamily": "'Cascadia Code', 'Source Code Pro', 'Source Code Variable', Monaco, 'Courier New', monospace",
+    "editor.fontSize": 20,
+    "editor.tabSize": 4,
+    "editor.minimap.enabled": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.renderControlCharacters": false,
+    "editor.suggestSelection": "first",
+    "editor.largeFileOptimizations": true,
+    "editor.accessibilitySupport": "off",
+
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/bin/bash",
+            "icon": "terminal-bash"
+        }
+    },
+
+    "extensions.autoUpdate": "onlyEnabledExtensions",
+    "extensions.ignoreRecommendations": true,
+
+    "git.ignoreMissingGitWarning": true,
+    "git.ignoreLegacyWarning": true,
+
+    "docker.enableDockerComposeLanguageService": true,
+
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, AlignConsecutiveAssignments: false, AlignConsecutiveDeclarations: false, AlignConsecutiveMacros: true, AlignTrailingComments: true, AllowShortBlocksOnASingleLine: Empty, BreakBeforeBraces: Attach, ColumnLimit: 0, IndentWidth: 4, PointerAlignment: Left }",
+
+    "dotnet.codeLens.enableReferencesCodeLens": false,
+
+    "python.linting.enabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pycodestyleArgs": [
+        "--ignore=E501"
+    ],
+    "python.formatting.autopep8Args": [
+        "--ignore=E501"
+    ],
+
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    "latex-workshop.view.pdf.viewer": "tab",
+
+}
